@@ -1,0 +1,15 @@
+<input id="txt" type="text" placeholder="Enter any word"/>
+<br/>
+<button id="btn">Get Data </button>
+
+<script>
+// https://en.wikipedia.org/wiki/
+   var btn = document.getElementById('btn');
+   btn.onclick = function(){
+    var val = document.getElementById('txt').value;
+    var url = "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&rvsection=0&titles=pizza";
+    fetch(url)
+       .then(response => response.json())
+       .then(data => console.log(data))
+    }  
+</script> 
